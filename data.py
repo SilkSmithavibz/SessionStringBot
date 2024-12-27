@@ -50,7 +50,7 @@ class Data:
 
 ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴꜱ ʙʏ @The_Architect04
 
-ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ: [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://github.com/EL-Coders/SessionStringBot)
+ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ: [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://github.com/)
 
 ꜰʀᴀᴍᴇᴡᴏʀᴋ: [ᴘʏʀᴏɢʀᴀᴍ](https://docs.pyrogram.org)
 
