@@ -1,8 +1,8 @@
-python-dotenv
-SQLAlchemy
-psycopg2
-Telethon
-git+https://github.com/rahulps1000/pyropatch.git@pyrotgfork
-pyrotgfork
-TgCrypto
-uvloop
+python-dotenv            # For environment variable management
+SQLAlchemy               # For database ORM
+psycopg2-binary          # PostgreSQL database adapter
+Telethon                 # Telegram client library
+git+https://github.com/rahulps1000/pyropatch.git@pyrotgfork  # Custom Pyrogram patch fork
+TgCrypto                 # Cryptographic library for Telegram
+uvloop                   # Fast asyncio event loop
+
