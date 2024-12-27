@@ -2,21 +2,21 @@ from pyrogram.types import InlineKeyboardButton
 
 
 class Data:
-    generate_single_button = InlineKeyboardButton("🔥 ꜱᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ꜱᴇꜱꜱɪᴏɴ ", callback_data="generate")
+    generate_single_button = InlineKeyboardButton("🦋 ꜱᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ꜱᴇꜱꜱɪᴏɴ 🦋", callback_data="generate")
 
     home_buttons = [
         [generate_single_button],
-        [InlineKeyboardButton(text="🏠 ʀᴇᴛᴜʀɴ ʜᴏᴍᴇ 🏠", callback_data="home")]
+        [InlineKeyboardButton(text="🧃 ʀᴇᴛᴜʀɴ ʜᴏᴍᴇ 🧃", callback_data="home")]
     ]
 
     buttons = [
         [generate_single_button],
-        [InlineKeyboardButton("✨ ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ ᴀɴᴅ ᴍᴏʀᴇ ʙᴏᴛꜱ ✨", url="https://t.me/ELUpdates/8")],
+        [InlineKeyboardButton("🍬 ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ ᴀɴᴅ ᴍᴏʀᴇ ʙᴏᴛꜱ 🍬", url="https://t.me/The_Architect04/13")],
         [
-            InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ❔", callback_data="help"),
-            InlineKeyboardButton("🎪 ᴀʙᴏᴜᴛ 🎪", callback_data="about")
+            InlineKeyboardButton("👻 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 👻", callback_data="help"),
+            InlineKeyboardButton("🌲 ᴀʙᴏᴜᴛ 🌲", callback_data="about")
         ],
-        [InlineKeyboardButton("♥ ᴍᴏʀᴇ ᴀᴍᴀᴢɪɴɢ ʙᴏᴛꜱ ♥", url="https://t.me/ELUpdates")],
+        [InlineKeyboardButton("⚡ ᴍᴏʀᴇ ᴀᴍᴀᴢɪɴɢ ʙᴏᴛꜱ ⚡", url="https://t.me/The_Architect04")],
     ]
 
     START = """
@@ -35,7 +35,7 @@ class Data:
     """
 
     HELP = """
-✨ **ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ** ✨
+🌴 **ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ** 🌴
 
 /about - ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ
 /help - ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ
