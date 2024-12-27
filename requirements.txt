@@ -5,4 +5,5 @@ Telethon                 # Telegram client library
 git+https://github.com/rahulps1000/pyropatch.git@pyrotgfork  # Custom Pyrogram patch fork
 TgCrypto                 # Cryptographic library for Telegram
 uvloop                   # Fast asyncio event loop
+python-3.10.4
 
