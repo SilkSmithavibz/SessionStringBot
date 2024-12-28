@@ -48,3 +48,4 @@ async def send_text(bot, message: Message):
         msg = await message.reply_text(reply_error, message.id)
         await asyncio.sleep(8)
         await msg.delete()
+        
