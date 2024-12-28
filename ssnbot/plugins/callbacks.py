@@ -1,10 +1,16 @@
 import traceback
 from data import Data
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardMarkup, LinkPreviewOptions
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, LinkPreviewOptions
 from ssnbot.plugins.generate import generate_session, ask_ques, buttons_ques
 from ssnbot import LOGGER
 
+ERROR_MESSAGE = (
+    "Oops! An exception occurred! \n\n**Error** : {} "
+    "\n\nPlease visit @The_Architect04 if this message doesn't contain any "
+    "sensitive information and you want to report this issue, "
+    "as this error message is not being logged by us!"
+)
 
 @Client.on_callback_query(filters.regex(r"^home$"))
 async def home(bot, query):
@@ -16,7 +22,7 @@ async def home(bot, query):
         chat_id=chat_id,
         message_id=message_id,
         text=Data.START.format(query.from_user.mention, mention),
-        reply_markup=InlineKeyboardMarkup(Data.buttons),
+        reply_markup=InlineKeyboardMarkup(Data.buttons),  # Ensure Data.buttons exists
     )
 
 
@@ -27,10 +33,9 @@ async def about(bot, query):
     await bot.edit_message_text(
         chat_id=chat_id,
         message_id=message_id,
-        text=Data.ABOUT,
-        # disable_web_page_preview=True,
+        text=Data.ABOUT,  # Ensure Data.ABOUT exists
         link_preview_options=LinkPreviewOptions(is_disabled=True),
-        reply_markup=InlineKeyboardMarkup(Data.home_buttons),
+        reply_markup=InlineKeyboardMarkup(Data.home_buttons),  # Ensure Data.home_buttons exists
     )
 
 
@@ -41,10 +46,9 @@ async def help(bot, query):
     await bot.edit_message_text(
         chat_id=chat_id,
         message_id=message_id,
-        text=Data.HELP,
-        # disable_web_page_preview=True,
+        text=Data.HELP,  # Ensure Data.HELP exists
         link_preview_options=LinkPreviewOptions(is_disabled=True),
-        reply_markup=InlineKeyboardMarkup(Data.home_buttons),
+        reply_markup=InlineKeyboardMarkup(Data.home_buttons),  # Ensure Data.home_buttons exists
     )
 
 
@@ -61,7 +65,7 @@ async def pyro(bot, query):
             "Please note that the new type of string sessions may not work in all bots, i.e, only the bots that have been updated to pyrogram v2 will work!",
             show_alert=True,
         )
-        await generate_session(bot, query.message)
+        await generate_session(bot, query.message)  # Ensure generate_session is correct
     except Exception as e:
         LOGGER.error(traceback.format_exc())
         LOGGER.error(e)
@@ -72,16 +76,8 @@ async def pyro(bot, query):
 async def tele(bot, query):
     try:
         await query.answer()
-        await generate_session(bot, query.message, telethon=True)
+        await generate_session(bot, query.message, telethon=True)  # Ensure generate_session handles Telethon
     except Exception as e:
         LOGGER.error(traceback.format_exc())
         LOGGER.error(e)
         await query.message.reply(ERROR_MESSAGE.format(str(e)))
-
-
-ERROR_MESSAGE = (
-    "Oops! An exception occurred! \n\n**Error** : {} "
-    "\n\nPlease visit @The_Architect04 if this message doesn't contain any "
-    "sensitive information and you if want to report this as "
-    "this error message is not being logged by us!"
-)
