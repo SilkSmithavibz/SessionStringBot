@@ -13,7 +13,7 @@ APP_ID = os.environ.get("APP_ID", "")
 API_HASH = os.environ.get("API_HASH", "")
 BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 DB_URL = os.environ.get("DB_URL", "")
-OWNER_ID = int(os.environ.get('OWNER_ID', ""))
+OWNER_ID = int(os.environ.get('OWNER_ID', "7224419362"))
 MUST_JOIN = os.environ.get("MUST_JOIN", "")
 ADMINS = [
     int(user) if pattern.search(user) else user
