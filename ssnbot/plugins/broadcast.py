@@ -20,31 +20,40 @@ async def get_subscribers_count(bot: Client, message: Message):
 
 
 @Client.on_message(filters.private & filters.command("broadcast"))
-async def send_text(bot, message: Message):
+async def send_text(bot: Client, message: Message):
     user_id = message.from_user.id
     if user_id not in ADMINS:
         return
 
-    if "broadcast" in message.text and message.reply_to_message is not None:
-        query = await query_msg()
-        for row in query:
-            chat_id = int(row[0])
-            try:
-                await bot.copy_message(
-                    chat_id=chat_id,
-                    from_chat_id=message.chat.id,
-                    message_id=message.reply_to_message_id,
-                    caption=message.reply_to_message.caption,
-                    reply_markup=message.reply_to_message.reply_markup,
-                )
-            except FloodWait as e:
-                await asyncio.sleep(e.value)
-            except Exception:
-                pass
+    if message.reply_to_message is None:
+        reply_error = "`Use this command as a reply to any telegram message without any spaces.`"
+        msg = await message.reply_text(reply_error)
+        await asyncio.sleep(8)
+        await msg.delete()
+        return
+
+    # Check if message text is exactly "broadcast"
+    if "broadcast" in message.text.lower():
+        query = query_msg()  # Remove await here if query_msg is not async
+        if query:  # Ensure there are results to send the message to
+            for row in query:
+                chat_id = int(row[0])
+                try:
+                    await bot.copy_message(
+                        chat_id=chat_id,
+                        from_chat_id=message.chat.id,
+                        message_id=message.reply_to_message_id,
+                        caption=message.reply_to_message.caption,
+                        reply_markup=message.reply_to_message.reply_markup,
+                    )
+                except FloodWait as e:
+                    await asyncio.sleep(e.value)
+                except Exception as e:
+                    logger.error(f"Error sending message to {chat_id}: {e}")
+        else:
+            await message.reply_text("No users found in the database.")
     else:
-        reply_error = (
-            "`Use this command as a reply to any telegram message without any spaces.`"
-        )
-        msg = await message.reply_text(reply_error, message.id)
+        reply_error = "`Please reply to a message and use the command properly.`"
+        msg = await message.reply_text(reply_error)
         await asyncio.sleep(8)
         await msg.delete()
