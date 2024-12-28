@@ -15,8 +15,8 @@ class Data:
         [
             InlineKeyboardButton("👻 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 👻", callback_data="help"),
             InlineKeyboardButton("🌲 ᴀʙᴏᴜᴛ 🌲", callback_data="about")
-        ],
-        [InlineKeyboardButton("⚡ ᴍᴏʀᴇ ᴀᴍᴀᴢɪɴɢ ʙᴏᴛꜱ ⚡", url="https://t.me/The_Architect04")],
+        ]
+        
     ]
 
     START = """
