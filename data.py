@@ -1,6 +1,5 @@
 from pyrogram.types import InlineKeyboardButton
 
-
 class Data:
     generate_single_button = InlineKeyboardButton("🦋 ꜱᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ꜱᴇꜱꜱɪᴏɴ 🦋", callback_data="generate")
 
@@ -16,8 +15,7 @@ class Data:
             InlineKeyboardButton("👻 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 👻", callback_data="help"),
             InlineKeyboardButton("🌲 ᴀʙᴏᴜᴛ 🌲", callback_data="about")
         ]
-        
-    ]
+    ] 
 
     START = """
 **ʜᴇʏ {0}**
