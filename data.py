@@ -1,60 +1,57 @@
-from pyrogram.types import InlineKeyboardButton
-
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 class Data:
-    generate_single_button = InlineKeyboardButton("🦋 ꜱᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ꜱᴇꜱꜱɪᴏɴ 🦋", callback_data="generate")
+    # Inline buttons
+    generate_single_button = InlineKeyboardButton(
+        text="🦋 ʒᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ ʒᴇᴄᴄɪᴀᴏ 🦋",
+        callback_data="generate"
+    )
 
-    home_buttons = [
+    # InlineKeyboardMarkup for "home" screen
+    home_buttons = InlineKeyboardMarkup(inline_keyboard=[
         [generate_single_button],
         [InlineKeyboardButton(text="🧃 ʀᴇᴛᴜʀɴ ʜᴏᴍᴇ 🧃", callback_data="home")]
-    ]
+    ])
 
-    buttons = [
+    # InlineKeyboardMarkup for main buttons
+    buttons = InlineKeyboardMarkup(inline_keyboard=[
         [generate_single_button],
-        
         [
-            InlineKeyboardButton("👻 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ 👻", callback_data="help"),
-            InlineKeyboardButton("🌲 ᴀʙᴏᴜᴛ 🌲", callback_data="about")
-        ],
-        
-    ]
+            InlineKeyboardButton(text="👻 ʜᴏᴏ ᴛᴏ ᴜʀᴇ 👻", callback_data="help"),
+            InlineKeyboardButton(text="🌲 ᴀʙᴏᴜᴛ 🌲", callback_data="about")
+        ]
+    ])
 
+    # Text messages
     START = """
-**ʜᴇʏ {0}**
+**ʜᴇʀ {0}**
 
-ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ {1}
+ʜᴇʟᴏᴄʀᴇ ᴛᴏ {1}
 
-ɪꜰ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴛʀᴜꜱᴛ ᴛʜɪꜱ ʙᴏᴛ, 
-> ᴘʟᴇᴀꜱᴇ ꜱᴛᴏᴘ ʀᴇᴀᴅɪɴɢ ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ
-> ᴅᴇʟᴇᴛᴇ ᴛʜɪꜱ ᴄʜᴀᴛ
+ɪʟ ᴏᴜ ᴅᴏɴ'ᴛ ᴛʀᴜʟᴛ ᴛʜɪᴛ ʙᴏᴛ, 
+> ᴘʟᴏᴇᴀᴅᴇ ᴛᴏᴏ ʀᴇᴀᴄʟɪᴏɴ
+> ᴅᴇʟᴇᴛᴇ ᴛʜɪᴛ ᴄʜᴀᴛ
 
-ꜱᴛɪʟʟ ʀᴇᴀᴅɪɴɢ?
-ʏᴏᴜ ᴄᴀɴ ᴜꜱᴇ ᴍᴇ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴꜱ. ᴜꜱᴇ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ʟᴇᴀʀɴ ᴍᴏʀᴇ!
+ᴛɪʟʟ ʀᴇᴀᴄᴇᴇɴɢ?
+ᴜᴜ ᴀᴄᴀɴ ᴛᴇ ᴍᴇ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘᴀʏʀᴏɢᴛᴀᴜ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ʒᴇᴄᴄɪᴀᴏᴄᴛᴇ. ᴜᴜᴇ ᴛᴇ ʙᴜᴛᴛᴏɴᴛʟ ʙᴇʟᴏᴜ ᴛᴏ ʟᴇᴀᴜʀᴇ ᴛʜᴇᴜ!
 
-ʙʏ @The_Architect04**
+ʙᴇ @The_Architect04**
     """
 
     HELP = """
-🌴 **ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅꜱ** 🌴
+🌴 **ᴀᴠᴀɪʟᴇᴌᴇ ᴄᴏᴍᴍᴀᴎᴅᴛᴇ** 🌴
 
 /about - ᴀʙᴏᴜᴛ ᴛʜᴇ ʙᴏᴛ
-/help - ᴛʜɪꜱ ᴍᴇꜱꜱᴀɢᴇ
-/start - ꜱᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
-/generate - ɢᴇɴᴇʀᴀᴛᴇ ꜱᴇꜱꜱɪᴏɴ
-/cancel - ᴄᴀɴᴄᴇʟ ᴛʜᴇ ᴘʀᴏᴄᴇꜱꜱ
-/restart - ᴄᴀɴᴄᴇʟ ᴀɴᴅ ʀᴇꜱᴛᴀʀᴛ ᴛʜᴇ ᴘʀᴏᴄᴇꜱꜱ
+/help - ᴛʜɪᴛ ᴍᴇᴛᴛᴇᴄʒᴇ
+/start - ᴛᴛᴀʀᴛ ᴛᴇ ʙᴏᴛ
+/generate - ɢᴇɴᴇʀᴇ ʒᴇᴄᴄɪᴀᴏᴄᴛ
+/cancel - ᴄᴀɴᴄᴇʟ ᴛᴇ ᴘʀᴏᴄᴇᴅᴛʀ
+/restart - ᴄᴀɴᴄᴇʟ ᴀɴᴅ ʀᴇᴛʟᴀʀᴛ ᴛᴇ ᴘʀᴏᴄᴇᴅᴛʀ
 """
 
     ABOUT = """
-🍄 **ᴀʙᴏᴜᴛ ᴛʜɪꜱ ʙᴏᴛ** 🍄
+🍄 **ᴀʙᴏᴜᴛ ᴛʜɪᴛ ʙᴏᴛ** 🍄
 
-ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘʏʀᴏɢʀᴀᴍ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ꜱᴛʀɪɴɢ ꜱᴇꜱꜱɪᴏɴꜱ ʙʏ @The_Architect04
+ᴛᴇʟᴇɢᴏᴄʜᴏ ʙᴏᴛ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴘᴀʏʀᴏɢᴛᴀᴜ ᴀɴᴅ ᴛᴇʟᴇᴛʜᴏɴ ʒᴇᴄᴄɪᴀᴏᴄᴛᴇᴄᴇ @The_Architect04
 
-ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ: [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://github.com/)
-
-ꜰʀᴀᴍᴇᴡᴏʀᴋ: [ᴘʏʀᴏɢʀᴀᴍ](https://docs.pyrogram.org)
-
-ʟᴀɴɢᴜᴀɢᴇ: [ᴘʏᴛʜᴏɴ](https://www.python.org)
-
-ᴅᴇᴠᴇʟᴏᴘᴇʀ: @Marwin_ll
-    """
+ᴛᴏᴜʀᴆᴛᴆ ᴄᴏᴄᴇ: [ᴄ
